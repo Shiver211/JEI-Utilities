@@ -150,7 +150,7 @@ public class AdvancedIngredientGrid extends IngredientGrid {
                 );
             }
 
-            guiHistoryIngredientSlots.render(minecraft);
+            renderHistoryIngredientsSlow();
 
         }
 
@@ -231,6 +231,15 @@ public class AdvancedIngredientGrid extends IngredientGrid {
             }
         }
         return false;
+    }
+
+    private void renderHistoryIngredientsSlow() {
+        for (IngredientListSlot slot : guiHistoryIngredientSlots.getAllGuiIngredientSlots()) {
+            IngredientRenderer ingredientRenderer = slot.getIngredientRenderer();
+            if (ingredientRenderer != null) {
+                ingredientRenderer.renderSlow();
+            }
+        }
     }
 
     public IngredientListBatchRenderer getGuiHistoryIngredientSlots() {

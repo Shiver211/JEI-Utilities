@@ -17,6 +17,9 @@ buildscript {
             name 'Cleanroom Maven'
             url 'https://maven.cleanroommc.com'
         }
+        flatDir {
+            dirs 'libs'
+        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -91,6 +94,9 @@ repositories {
     }
     maven {
         url "https://maven.cleanroommc.com"
+    }
+    flatDir {
+        dirs 'libs'
     }
 }
 
